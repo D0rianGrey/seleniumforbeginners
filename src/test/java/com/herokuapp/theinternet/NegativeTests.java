@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class NegativeTests {
+    //
 
     @Test(priority = 1, groups = {"negativeTests", "smokeTests"})
     public void incorrectUsernameTest() {
