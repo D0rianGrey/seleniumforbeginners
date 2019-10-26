@@ -4,18 +4,39 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.util.concurrent.TimeUnit;
 
 public class LoginTests {
 
     private WebDriver driver;
 
-    @BeforeMethod
-    private void setUp() {
-        driver = new ChromeDriver();
+    @Parameters({"browser"})
+    @BeforeMethod(alwaysRun = true)
+    private void setUp(@Optional("chrome") String browser) {
+        switch (browser) {
+            case "chrome":
+                driver = new ChromeDriver();
+                break;
+            case "firefox":
+                driver = new FirefoxDriver();
+                break;
+            case "edge":
+                driver = new EdgeDriver();
+                break;
+            default:
+                System.out.println(browser + " - is incorrect name of browser so it will be chrome");
+                driver = new ChromeDriver();
+                break;
+        }
+
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Test(priority = 1, groups = {"positiveTests", "smokeTests"})
@@ -96,7 +117,7 @@ public class LoginTests {
 
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     private void tearDown() {
         driver.quit();
     }

@@ -3,7 +3,8 @@
 <suite name="LoginTestSuite" verbose="1">
 
     <test name="PositiveLoginTest">
-        <!--<groups>
+        <parameter name="browser" value="chrome"/>
+        <groups>
             <run>
                 <include name="positiveTests"/>
             </run>
@@ -12,19 +13,20 @@
             <class name="com.herokuapp.theinternet.LoginTests">
             </class>
 
-        </classes>-->
+        </classes>
 
-        <classes>
+        <!--<classes>
             <class name="com.herokuapp.theinternet.LoginTests">
             <methods>
                 <include name="PositiveLoginTest"/>
             </methods>
             </class>
-        </classes>
+        </classes>-->
 
     </test>
 
     <test name="NegativeUsernameTests">
+        <parameter name="browser" value="chrome"/>
         <parameter name="username" value="incorrectUserName"/>
         <parameter name="password" value="SuperSecretPassword!"/>
         <parameter name="expectedMessage" value="Your username is invalid!"/>
@@ -39,6 +41,7 @@
 
 
     <test name="NegativePasswordTests">
+        <parameter name="browser" value="firefox"/>
         <parameter name="username" value="tomsmith"/>
         <parameter name="password" value="IncorrectPassword"/>
         <parameter name="expectedMessage" value="Your password is invalid!"/>
