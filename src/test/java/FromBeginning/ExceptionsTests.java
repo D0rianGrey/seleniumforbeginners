@@ -1,4 +1,4 @@
-package com.herokuapp.theinternet;
+package FromBeginning;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;

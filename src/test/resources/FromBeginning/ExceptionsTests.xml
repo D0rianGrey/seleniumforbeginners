@@ -3,7 +3,7 @@
 <suite name="Exceptions Tests Suite" verbose="1">
     <test name="Exeptions Tests">
         <classes>
-            <class name="com.herokuapp.theinternet.ExceptionsTests">
+            <class name="FromBeginning.ExceptionsTests">
                 <methods>
                 <include name="disabledElementTest"/>
                 </methods>
