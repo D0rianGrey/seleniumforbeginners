@@ -14,31 +14,30 @@ public class DropDownPage extends BasePageObject {
         super(driver, log);
     }
 
-
-    public void selectOption(int i){
+    /** This method selects given option from dropdown */
+    public void selectOption(int i) {
         log.info("Selecting option " + i + " from dropdown");
         WebElement dropdownElement = find(dropdown);
         Select dropdown = new Select(dropdownElement);
 
-        //There are three ways to use select class
-        //#1
-        //dropdown.selectByIndex(i);
+        // There are three ways to use Select class
+        // #1
+        // dropdown.selectByIndex(i);
 
-        //#2
+        // #2
         dropdown.selectByValue("" + i);
 
-        //#3
-        //dropdown.selectByVisibleText("Option " + i);
+        // #3
+        // dropdown.selectByVisibleText("Option " + i);
     }
 
-
-    public String getSelectedOption(){
+    /** This method returns selected option in dropdown as a string */
+    public String getSelectedOption() {
         WebElement dropdownElement = find(dropdown);
         Select dropdown = new Select(dropdownElement);
         String selectedOption = dropdown.getFirstSelectedOption().getText();
         log.info(selectedOption + " is selected in dropdown");
         return selectedOption;
     }
-
 
 }

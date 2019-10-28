@@ -13,7 +13,7 @@ public class CheckBoxesTests extends TestUtilities {
         welcomePageObject.openPage();
         CheckboxesPage checkboxesPage = welcomePageObject.clickCheckboxesLink();
         checkboxesPage.selectAllCheckboxes();
-        Assert.assertTrue(checkboxesPage.areaAllCheckboxesChecked(),"Not all checkboxes are checked");
+        Assert.assertTrue(checkboxesPage.areAllCheckboxesChecked(),"Not all checkboxes are checked");
 
 
     }

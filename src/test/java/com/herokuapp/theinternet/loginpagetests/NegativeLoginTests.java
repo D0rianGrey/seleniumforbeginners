@@ -20,7 +20,7 @@ public class NegativeLoginTests extends TestUtilities {
         LoginPage loginPage = welcomePageObject.clickFormAuthenticationLink();
         /*SecureAreaPage secureAreaPage = loginPage.login(username,password);
         Assert.assertTrue(secureAreaPage.getSuccessMessageText().contains(expectedErrorMessage));*/
-        loginPage.negativeLogin(username, password);
+        loginPage.negativeLogIn(username, password);
         loginPage.waitForErrorMessage();
         String message = loginPage.getErrorMessageText();
         Assert.assertTrue(message.contains(expectedErrorMessage));
