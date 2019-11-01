@@ -2,9 +2,9 @@ package com.herokuapp.theinternet.loginpagetests;
 
 import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.LoginPage;
-import com.herokuapp.theinternet.pages.SecureAreaPage;
-import com.herokuapp.theinternet.pages.WelcomePageObject;
-import org.openqa.selenium.By;
+import com.herokuapp.theinternet.pages.WelcomePage;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -12,18 +12,20 @@ import org.testng.annotations.Test;
 public class NegativeLoginTests extends TestUtilities {
 
 
+    @Description("Some description for from allure")
     @Parameters({"username", "password", "expectedMessage"})
     @Test(priority = 1)
     public void negativeTest(String username, String password, String expectedErrorMessage) {
-        WelcomePageObject welcomePageObject = new WelcomePageObject(driver, log);
-        welcomePageObject.openPage();
-        LoginPage loginPage = welcomePageObject.clickFormAuthenticationLink();
+        WelcomePage welcomePage = new WelcomePage(driver, log);
+        welcomePage.openPage();
+        LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
         /*SecureAreaPage secureAreaPage = loginPage.login(username,password);
         Assert.assertTrue(secureAreaPage.getSuccessMessageText().contains(expectedErrorMessage));*/
         loginPage.negativeLogIn(username, password);
         loginPage.waitForErrorMessage();
         String message = loginPage.getErrorMessageText();
         Assert.assertTrue(message.contains(expectedErrorMessage));
+        Allure.addAttachment("My attachment","yeah, I am an attachment");
 
 
 
