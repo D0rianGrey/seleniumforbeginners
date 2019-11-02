@@ -5,3 +5,5 @@ target/generated-test-sources/
 target/test-classes/com/
 /target/
 /allure-results/
+/test-output/
+/src/main/resources/Profiles/

@@ -5,7 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import org.testng.annotations.DataProvider;
 
@@ -35,9 +39,9 @@ public class CsvDataProviders {
 			}
 			reader.close();
 		} catch (FileNotFoundException e) {
-			throw new RuntimeException("File " + pathname + " was not found.\n" + Arrays.toString(e.getStackTrace()));
+			throw new RuntimeException("File " + pathname + " was not found.\n" + e.getStackTrace().toString());
 		} catch (IOException e) {
-			throw new RuntimeException("Could not read " + pathname + " file.\n" + Arrays.toString(e.getStackTrace()));
+			throw new RuntimeException("Could not read " + pathname + " file.\n" + e.getStackTrace().toString());
 		}
 
 		return list.iterator();
