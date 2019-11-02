@@ -30,24 +30,24 @@ public class BrowserDriverFactory {
 
         switch (browser) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\drivers\\windows\\chromedriver.exe");
                 driver.set(new ChromeDriver());
                 break;
 
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "src\\main\\resources\\drivers\\windows\\geckodriver.exe");
                 driver.set(new FirefoxDriver());
                 break;
 
             case "chromeheadless":
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\drivers\\windows\\chromedriver.exe");
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
                 driver.set(new ChromeDriver(chromeOptions));
                 break;
 
             case "firefoxheadless":
-                System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "src\\main\\resources\\drivers\\windows\\geckodriver.exe");
                 FirefoxBinary firefoxBinary = new FirefoxBinary();
                 firefoxBinary.addCommandLineOptions("--headless");
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -56,7 +56,7 @@ public class BrowserDriverFactory {
                 break;
 
             case "phantomjs":
-                System.setProperty("phantomjs.binary.path", "src/main/resources/phantomjs.exe");
+                System.setProperty("phantomjs.binary.path", "src\\main\\resources\\drivers\\windows\\phantomjs.exe");
                 driver.set(new PhantomJSDriver());
                 break;
 
@@ -66,7 +66,7 @@ public class BrowserDriverFactory {
 
             default:
                 System.out.println("Do not know how to start: " + browser + ", starting chrome.");
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\drivers\\windows\\chromedriver.exe");
                 driver.set(new ChromeDriver());
                 break;
         }
@@ -79,7 +79,7 @@ public class BrowserDriverFactory {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("user-data-dir=src/main/resources/Profiles/" + profile);
 
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\drivers\\windows\\chromedriver.exe");
         driver.set(new ChromeDriver(chromeOptions));
         return driver.get();
     }
@@ -91,7 +91,7 @@ public class BrowserDriverFactory {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\drivers\\windows\\chromedriver.exe");
         driver.set(new ChromeDriver(chromeOptions));
         return driver.get();
     }
