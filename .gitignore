@@ -9,3 +9,7 @@ target/test-classes/com/
 /src/main/resources/Profiles/
 /.allure/
 /src/main/resources/drivers/
+/src/main/resources/chromedriver
+/src/main/resources/geckodriver
+/src/main/resources/msedgedriver
+/src/main/resources/phantomjs

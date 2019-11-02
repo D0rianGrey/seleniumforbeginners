@@ -35,7 +35,7 @@ public class BaseTest {
         } else if (deviceName != null) {
             driver = factory.createChromeWithMobileEmulation(deviceName);
         } else {
-            driver = factory.createDriver();
+            driver = factory.createDriver("mac");
         }
 
         // This sleep here is for instructor only. Students don't need this here
