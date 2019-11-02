@@ -3,3 +3,4 @@
 .idea/seleniumforbeginners.iml
 target/generated-test-sources/
 target/test-classes/com/
+/target/
