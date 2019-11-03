@@ -12,6 +12,7 @@ public class TestListener implements ITestListener {
     String testName;
     String testMethodName;
 
+
     @Override
     public void onTestStart(ITestResult result) {
         this.testMethodName = result.getMethod().getMethodName();

@@ -35,7 +35,7 @@ public class BaseTest {
         } else if (deviceName != null) {
             driver = factory.createChromeWithMobileEmulation(deviceName);
         } else {
-            driver = factory.createDriver("mac");
+            driver = factory.createDriver("windows");
         }
 
         // This sleep here is for instructor only. Students don't need this here
@@ -56,7 +56,9 @@ public class BaseTest {
     public void tearDown() {
         log.info("Close driver");
         // Close browser
-        driver.quit();
+        if (driver!=null) {
+            driver.quit();
+        }
     }
 
 }

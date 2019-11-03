@@ -56,13 +56,13 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.25</version>
+            <version>1.7.28</version>
         </dependency>
 
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
-            <version>2.13.0</version>
+            <version>2.9.0</version>
         </dependency>
 
         <dependency>
@@ -95,6 +95,25 @@
             <version>2.36.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.5.0</version>
+        </dependency>
+
+        <dependency>
+        <groupId>javax.xml.bind</groupId>
+        <artifactId>jaxb-api</artifactId>
+        <version>2.3.0</version>
+        </dependency>
+
+
 
     </dependencies>
 
@@ -121,7 +140,8 @@
 
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src\test\resources\SeparateTestSuites\CheckBoxesTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\SeparateTestSuites\ScreenShotsFromAllureSuite.xml</suiteXmlFile>
+                        <!--<suiteXmlFile>src\test\resources\SeparateTestSuites\CheckboxesTestSuite.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
@@ -137,6 +157,7 @@
                         <property>
                             <name>allure.results.directory</name>
                             <value>${project.build.directory}/allure-results</value>
+                            <!--<value>C:\Users\utyfd\.jenkins\workspace\Selenium For Beginners Local\allure-results</value>-->
                         </property>
                     </systemProperties>
                     <reportsDirectory>./test-output/${timestamp}</reportsDirectory>
