@@ -140,8 +140,8 @@
 
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src\test\resources\SeparateTestSuites\ScreenShotsFromAllureSuite.xml</suiteXmlFile>
-                        <!--<suiteXmlFile>src\test\resources\SeparateTestSuites\CheckboxesTestSuite.xml</suiteXmlFile>-->
+                        <!--<suiteXmlFile>src\test\resources\SeparateTestSuites\ScreenShotsFromAllureSuite.xml</suiteXmlFile>-->
+                        <suiteXmlFile>src\test\resources\SeparateTestSuites\CheckboxesTestSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
